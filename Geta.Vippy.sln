@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyWrapper", "Geta.VippyWrapper\Geta.VippyWrapper.csproj", "{8DE1E4F6-B874-4ECD-84EE-567498E45A66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B0E31492-0534-4C41-943F-5998C76285F5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyModule", "Geta.VippyModule\Geta.VippyModule.csproj", "{415166BD-B0B1-4B8C-8270-DDB9F5145CD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{C31184B1-18D7-490A-9FD2-C8252E5E0ED7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyVpp", "Geta.VippyVpp\Geta.VippyVpp.csproj", "{85B4CCF4-9362-47C7-A325-94215056F12A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DE1E4F6-B874-4ECD-84EE-567498E45A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE1E4F6-B874-4ECD-84EE-567498E45A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE1E4F6-B874-4ECD-84EE-567498E45A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE1E4F6-B874-4ECD-84EE-567498E45A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415166BD-B0B1-4B8C-8270-DDB9F5145CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415166BD-B0B1-4B8C-8270-DDB9F5145CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415166BD-B0B1-4B8C-8270-DDB9F5145CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415166BD-B0B1-4B8C-8270-DDB9F5145CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31184B1-18D7-490A-9FD2-C8252E5E0ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31184B1-18D7-490A-9FD2-C8252E5E0ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31184B1-18D7-490A-9FD2-C8252E5E0ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31184B1-18D7-490A-9FD2-C8252E5E0ED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85B4CCF4-9362-47C7-A325-94215056F12A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85B4CCF4-9362-47C7-A325-94215056F12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85B4CCF4-9362-47C7-A325-94215056F12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85B4CCF4-9362-47C7-A325-94215056F12A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

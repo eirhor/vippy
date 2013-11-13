@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<episerver.framework>
+  <virtualPathProviders>
+    <add name="Vippy"
+         virtualPath="~/Vippy/"
+         bypassAccessCheck="true"
+         virtualName="Vippy"
+         showInFileManager="true"
+         physicalPath="[appDataPath]\VippyFiles"
+         useRouting="true"
+         type="Geta.VippyVpp.VirtualPathProvider,Geta.VippyVpp"
+         apiKey="{apiKey}"
+         secretKey="{secretKey}" />
+  </virtualPathProviders>
+</episerver.framework>
