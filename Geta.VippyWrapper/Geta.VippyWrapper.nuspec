@@ -5,9 +5,12 @@
     <version>$version$</version>
     <authors>$author$</authors>
     <owners>$author$</owners>
+    <title>.NET wrapper for Vippy</title>
     <projectUrl>https://github.com/Geta/vippy</projectUrl>
+    <licenseUrl>https://raw.github.com/Geta/vippy/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <tags>EPiServer7</tags>
+    <copyright>Copyright © Geta AS 2013</copyright>
+    <tags>vippy</tags>
   </metadata>
 </package>

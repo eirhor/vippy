@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Geta.VippyWrapper")]
-[assembly: AssemblyDescription("Basic Vippy API wrapper")]
+[assembly: AssemblyDescription("This is a .NET wrapper around Vippy's public REST API. This wrapper contains all the public endpoints available at: http://vippy.co/developers/rest.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Geta AS")]
 [assembly: AssemblyProduct("Geta.VippyWrapper")]
