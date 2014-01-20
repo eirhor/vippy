@@ -12,6 +12,73 @@ namespace Geta.VippyModule.Rest
     [RestStore("vippyvideo")]
     public class VippyVideoStore : RestControllerBase
     {
+        public async Task<RestResult> Get(string name)
+        {
+            var id = GetId(name);
+            if (!string.IsNullOrEmpty(id))
+            {
+                return await RestVideoById(id);
+            }
+
+            var matches = await GetVideos();
+            if (IsNotEmpty(name))
+            {
+                matches = FilterByName(name, matches);
+            }
+
+            return RestVideos(matches);
+        }
+
+        private RestResult RestVideos(IEnumerable<Video> matches)
+        {
+            var result = matches
+                .Take(10)
+                .Select(m => new {Name = m.Title, Id = m.VideoId})
+                .ToList();
+           
+            result.Add(new {Name = string.Empty, Id = string.Empty});
+
+            return Rest(result);
+        }
+
+        private static IEnumerable<Video> FilterByName(string name, IEnumerable<Video> matches)
+        {
+            //Remove * at the end of name                
+            var n = name.Substring(0, name.Length - 1);
+            return matches.Where(e => e.Title.StartsWith(n, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static bool IsNotEmpty(string name)
+        {
+            return !string.IsNullOrEmpty(name) && !string.Equals(name, "*", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private async Task<RestResult> RestVideoById(string id)
+        {
+            var videos = await GetVideos();
+            var video = videos.FirstOrDefault(x => x.VideoId == id);
+            if (video != null)
+            {
+                return Rest(new
+                {
+                    Name = video.Title,
+                    Id = video.VideoId
+                });
+            }
+
+            return Rest(new {Name = string.Empty, Id = string.Empty});
+        }
+
+        private string GetId(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name) && RouteData.Values.Count > 0)
+            {
+                return RouteData.Values.First().Value as string;
+            }
+
+            return string.Empty;
+        }
+
         private async Task<IEnumerable<Video>> GetVideos()
         {
             string cacheKey = "vippyvideos";
@@ -29,31 +96,6 @@ namespace Geta.VippyModule.Rest
             }
 
             return videos;
-        }
-
-        public async Task<RestResult> Get(string name)
-        {
-            IEnumerable<Video> matches;
-            if (string.IsNullOrEmpty(name) || string.Equals(name, "*", StringComparison.OrdinalIgnoreCase))
-            {
-                matches = await GetVideos();
-            }
-            else
-            {
-                //Remove * at the end of name                
-                name = name.Substring(0, name.Length - 1);
-                matches = (await GetVideos()).Where(e => e.Title.StartsWith(name, StringComparison.OrdinalIgnoreCase));
-            }
-
-            var result = matches
-                .Take(10)
-                .Select(m => new { Name = m.Title, Id = m.VideoId })
-                .ToList();
-
-
-            result.Insert(0, new { Name = string.Empty, Id = string.Empty });
-
-            return Rest(result);
         }
     }
 }
