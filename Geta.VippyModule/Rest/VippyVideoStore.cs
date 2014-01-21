@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.Caching;
 using EPiServer.Shell.Services.Rest;
 using Geta.VippyWrapper.Responses;
+using log4net;
 
 namespace Geta.VippyModule.Rest
 {
     [RestStore("vippyvideo")]
     public class VippyVideoStore : RestControllerBase
     {
+        ILog _logger = LogManager.GetLogger(typeof(VippyVideoStore));
+
         public RestResult Get(string name)
         {
             var id = GetId(name);
@@ -54,10 +57,13 @@ namespace Geta.VippyModule.Rest
 
         private RestResult RestVideoById(string id)
         {
+            _logger.InfoFormat("Vippy: Getting video by Id: {0}", id);
+
             var videos = GetVideos();
             var video = videos.FirstOrDefault(x => x.VideoId == id);
             if (video != null)
             {
+                _logger.InfoFormat("Vippy: Video found by Id: {0}", id);
                 return Rest(new
                 {
                     Name = video.Title,
@@ -65,6 +71,7 @@ namespace Geta.VippyModule.Rest
                 });
             }
 
+            _logger.WarnFormat("Vippy: Video not found by Id: {0}", id);
             return Rest(new {Name = string.Empty, Id = string.Empty});
         }
 
