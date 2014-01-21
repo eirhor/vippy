@@ -213,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="module.config.transform" />
+    <None Include="Web.config.transform" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
