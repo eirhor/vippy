@@ -18,6 +18,6 @@
   </metadata>
   <files>
     <file src="module.config.transform" target="Content" />
+    <file src="Web.config.transform" target="Content" />
   </files>
-  
 </package>
