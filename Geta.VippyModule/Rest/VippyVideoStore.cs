@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Caching;
 using EPiServer.Shell.Services.Rest;
@@ -12,15 +11,15 @@ namespace Geta.VippyModule.Rest
     [RestStore("vippyvideo")]
     public class VippyVideoStore : RestControllerBase
     {
-        public async Task<RestResult> Get(string name)
+        public RestResult Get(string name)
         {
             var id = GetId(name);
             if (!string.IsNullOrEmpty(id))
             {
-                return await RestVideoById(id);
+                return RestVideoById(id);
             }
 
-            var matches = await GetVideos();
+            var matches = GetVideos();
             if (IsNotEmpty(name))
             {
                 matches = FilterByName(name, matches);
@@ -53,9 +52,9 @@ namespace Geta.VippyModule.Rest
             return !string.IsNullOrEmpty(name) && !string.Equals(name, "*", StringComparison.OrdinalIgnoreCase);
         }
 
-        private async Task<RestResult> RestVideoById(string id)
+        private RestResult RestVideoById(string id)
         {
-            var videos = await GetVideos();
+            var videos = GetVideos();
             var video = videos.FirstOrDefault(x => x.VideoId == id);
             if (video != null)
             {
@@ -79,7 +78,7 @@ namespace Geta.VippyModule.Rest
             return string.Empty;
         }
 
-        private async Task<IEnumerable<Video>> GetVideos()
+        private IEnumerable<Video> GetVideos()
         {
             string cacheKey = "vippyvideos";
 
@@ -90,7 +89,7 @@ namespace Geta.VippyModule.Rest
                 var wrapper = new VippyWrapper.VippyWrapper(VippyConfiguration.ApiKey,
                     VippyConfiguration.SecretKey);
 
-                videos = (await wrapper.GetVideos()).ToList();
+                videos = (wrapper.GetVideos().Result).ToList();
 
                 HttpRuntime.Cache.Insert(cacheKey, videos, null, Cache.NoAbsoluteExpiration, TimeSpan.FromMinutes(1));
             }
