@@ -12,7 +12,7 @@ namespace Geta.VippyModule.Rest
     [RestStore("vippyvideo")]
     public class VippyVideoStore : RestControllerBase
     {
-        ILog _logger = LogManager.GetLogger(typeof(VippyVideoStore));
+        readonly ILog _logger = LogManager.GetLogger(typeof(VippyVideoStore));
 
         public RestResult Get(string name)
         {
