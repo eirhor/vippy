@@ -10,8 +10,9 @@
     <licenseUrl>https://raw.github.com/Geta/vippy/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <copyright>Copyright © Geta AS 2013</copyright>
-    <tags>vippy EPiServer7</tags>
+    <copyright>Copyright © Geta 2015</copyright>
+    <iconUrl>http://cdn.geta.no/opensource/icons/geta-vippy-icon.png</iconUrl>
+    <tags>vippy EPiServer</tags>
     <dependencies>
       <dependency id="Geta.VippyWrapper"/>
     </dependencies>
