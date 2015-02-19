@@ -9,8 +9,9 @@
     <projectUrl>https://github.com/Geta/vippy</projectUrl>
     <licenseUrl>https://raw.github.com/Geta/vippy/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://cdn.geta.no/opensource/icons/geta-vippy-icon.png</iconUrl>
     <description>$description$</description>
-    <copyright>Copyright © Geta AS 2013</copyright>
+    <copyright>Copyright © Geta 2015</copyright>
     <tags>vippy</tags>
   </metadata>
 </package>
