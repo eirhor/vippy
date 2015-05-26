@@ -206,6 +206,7 @@
     <Compile Include="Rest\VippyVideoStore.cs" />
     <Compile Include="SelectionQueries\VippyVideoSelectionQuery.cs" />
     <Compile Include="VippyConfiguration.cs" />
+    <Compile Include="VippyModuleInitialization.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientResources\Scripts\Editors\VippyVideoSelection.js" />
@@ -213,7 +214,9 @@
     <Content Include="ClientResources\Scripts\RequireModule.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Geta.VippyModule.nuspec" />
+    <Content Include="Geta.VippyModule.nuspec">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -228,18 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="module.config.transform" />
-    <Content Include="web.config" />
-    <Content Include="modules\_protected\Shell\web.config" />
-    <Content Include="modules\_protected\Shell\EPiServer.Shell.UI.zip" />
-    <Content Include="modules\_protected\CMS\web.config" />
-    <Content Include="modules\_protected\CMS\EPiServer.Cms.Shell.UI.zip" />
     <None Include="Web.config.transform" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

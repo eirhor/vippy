@@ -13,7 +13,14 @@ namespace Geta.VippyModule.SelectionQueries
     [ServiceConfiguration(typeof(ISelectionQuery))]
     public class VippyVideoSelectionQuery : ISelectionQuery
     {
+        private readonly VippyWrapper.VippyWrapper _vippyWrapper;
         readonly ILog _logger = LogManager.GetLogger(typeof(VippyVideoSelectionQuery));
+
+        public VippyVideoSelectionQuery(VippyWrapper.VippyWrapper vippyWrapper)
+        {
+            if (vippyWrapper == null) throw new ArgumentNullException("vippyWrapper");
+            _vippyWrapper = vippyWrapper;
+        }
 
         public ISelectItem GetItemByValue(string value)
         {
@@ -33,8 +40,7 @@ namespace Geta.VippyModule.SelectionQueries
 
         public Video GetVideoById(string id)
         {
-            var videos = GetVideos();
-            return videos.FirstOrDefault(x => x.VideoId == id);
+            return _vippyWrapper.GetVideo(id, false).Result;
         }
 
         public IEnumerable<ISelectItem> GetItems(string query)
@@ -46,13 +52,22 @@ namespace Geta.VippyModule.SelectionQueries
                 matches = FilterByName(query, matches);
             }
 
-            return matches
+            var list = matches
                 .Take(20)
                 .Select(x => new SelectItem
                 {
                     Text = x.Title,
                     Value = x.VideoId
-                });
+                })
+                .ToList();
+
+            list.Insert(0, new SelectItem
+            {
+                Text = string.Empty,
+                Value = string.Empty
+            });
+
+            return list;
         }
 
         private static bool IsNotEmpty(string query)
@@ -71,15 +86,13 @@ namespace Geta.VippyModule.SelectionQueries
         {
             string cacheKey = "vippyvideos";
 
-            var videos = CacheManager.Get(cacheKey) as List<Video>;
+            var videos = CacheManager.Get(cacheKey) as IEnumerable<Video>;
 
             if (videos == null)
             {
-                var wrapper = new VippyWrapper.VippyWrapper(VippyConfiguration.ApiKey, VippyConfiguration.SecretKey);
+                videos = _vippyWrapper.GetVideos().Result;
 
-                videos = (wrapper.GetVideos().Result).ToList();
-
-                CacheManager.Insert(cacheKey, videos, new CacheEvictionPolicy(null, null, null, TimeSpan.FromMinutes(1), CacheTimeoutType.Absolute));
+                CacheManager.Insert(cacheKey, videos, new CacheEvictionPolicy(null, null, null, TimeSpan.FromMinutes(2), CacheTimeoutType.Absolute));
             }
 
             return videos;
