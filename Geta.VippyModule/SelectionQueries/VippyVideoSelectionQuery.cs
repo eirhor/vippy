@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using EPiServer;
 using EPiServer.Framework.Cache;
+using EPiServer.Logging.Compatibility;
 using EPiServer.ServiceLocation;
 using EPiServer.Shell.ObjectEditing;
 using Geta.VippyWrapper.Responses;
-using log4net;
 
 namespace Geta.VippyModule.SelectionQueries
 {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Caching;
+using EPiServer.Logging.Compatibility;
 using EPiServer.Shell.Services.Rest;
 using Geta.VippyWrapper.Responses;
-using log4net;
 
 namespace Geta.VippyModule.Rest
 {
