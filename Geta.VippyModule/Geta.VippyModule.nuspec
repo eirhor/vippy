@@ -15,12 +15,13 @@
     <iconUrl>http://cdn.geta.no/opensource/icons/geta-vippy-icon.png</iconUrl>
     <dependencies>
       <dependency id="Geta.VippyWrapper"/>
-      <dependency id="EPiServer.CMS.Core" version="7.10.0" />
-      <dependency id="EPiServer.CMS.UI" version="7.10.0" />
+      <dependency id="EPiServer.CMS.Core" version="[9.0.0,10.0.0)" />
+      <dependency id="EPiServer.CMS.UI" version="[9.0.0,10.0.0)" />
     </dependencies>
   </metadata>
   <files>
     <file src="module.config.transform" target="Content" />
-    <file src="Web.config.transform" target="Content" />
+    <file src="web.config.install.xdt" target="Content" />
+    <file src="web.config.uninstall.xdt" target="Content" />
   </files>
 </package>

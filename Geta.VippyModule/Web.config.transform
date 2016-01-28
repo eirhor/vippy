@@ -1,8 +1,0 @@
-﻿<?xml version="1.0"?>
-<configuration>
-  <appSettings>
-    <add key="Vippy:ApiKey" value="" />
-    <add key="Vippy:SecretKey" value="" />
-    <add key="Vippy:ArchiveNumber" value="" />
-  </appSettings>
-</configuration>
