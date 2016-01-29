@@ -6,7 +6,7 @@
 
   <dojoModules>
     <!-- Add a mapping from geta to ~/ClientResources/Scripts to the dojo loader configuration -->
-    <add name="geta" path="Scripts" />
+    <add name="geta" path="ClientResources/Scripts" />
   </dojoModules>
 
   <clientModule initializer="geta.ModuleInitializer"></clientModule>
