@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
     <appSettings>
-        <add key="Vippy:ApiKey" value="" xdt:Transform="Insert" xdt:Locator="Match(key)" />
-        <add key="Vippy:SecretKey" value="" xdt:Transform="Insert" xdt:Locator="Match(key)" />
-        <add key="Vippy:ArchiveNumber" value="" xdt:Transform="Insert" xdt:Locator="Match(key)" />
+        <add key="Vippy:ApiKey" value="" xdt:Transform="Insert" />
+        <add key="Vippy:SecretKey" value="" xdt:Transform="Insert" />
+        <add key="Vippy:ArchiveNumber" value="" xdt:Transform="Insert" />
     </appSettings>
 </configuration>
