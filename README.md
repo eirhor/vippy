@@ -1,5 +1,7 @@
-.NET wrapper for Vippy
-=====
+# .NET wrapper for Vippy
+
+![](http://tc.geta.no/app/rest/builds/buildType:(id:TeamFrederik_Vippy_VippyDebug)/statusIcon)
+
 What is Vippy?
 ------------------------------
 Vippy is a mediabank with support for videos, presentations and documents. For more information see: http://vippy.co.
