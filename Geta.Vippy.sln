@@ -10,13 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B0E314
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyWrapper", "Geta.VippyWrapper\Geta.VippyWrapper.csproj", "{8DE1E4F6-B874-4ECD-84EE-567498E45A66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyWrapper", "src\Geta.VippyWrapper\Geta.VippyWrapper.csproj", "{8DE1E4F6-B874-4ECD-84EE-567498E45A66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyModule", "Geta.VippyModule\Geta.VippyModule.csproj", "{415166BD-B0B1-4B8C-8270-DDB9F5145CD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyModule", "src\Geta.VippyModule\Geta.VippyModule.csproj", "{415166BD-B0B1-4B8C-8270-DDB9F5145CD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{C31184B1-18D7-490A-9FD2-C8252E5E0ED7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "src\Test\Test.csproj", "{C31184B1-18D7-490A-9FD2-C8252E5E0ED7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyVpp", "Geta.VippyVpp\Geta.VippyVpp.csproj", "{85B4CCF4-9362-47C7-A325-94215056F12A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.VippyVpp", "src\Geta.VippyVpp\Geta.VippyVpp.csproj", "{85B4CCF4-9362-47C7-A325-94215056F12A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
