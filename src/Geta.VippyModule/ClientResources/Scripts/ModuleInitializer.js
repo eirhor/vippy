@@ -20,7 +20,7 @@
     dependency,
     routes
 ) {
-    return declare("geta.ModuleInitializer", [_Module], {
+    return declare("geta/ModuleInitializer", [_Module], {
 
         // summary: Module initializer for the default module.
         initialize: function () {

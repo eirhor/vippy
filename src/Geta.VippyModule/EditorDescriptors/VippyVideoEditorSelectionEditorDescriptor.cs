@@ -7,7 +7,7 @@ namespace Geta.VippyModule.EditorDescriptors
     {
         public VippyVideoEditorSelectionEditorDescriptor()
         {
-            ClientEditingClass = "geta.editors.VippyVideoSelection";
+            ClientEditingClass = "geta/editors/VippyVideoSelection";
         }
     }
 }
