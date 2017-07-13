@@ -15,8 +15,8 @@
     <iconUrl>http://cdn.geta.no/opensource/icons/geta-vippy-icon.png</iconUrl>
     <dependencies>
       <dependency id="Geta.VippyWrapper"/>
-      <dependency id="EPiServer.CMS.Core" version="[9.0.0,10.10.1)" />
-      <dependency id="EPiServer.CMS.UI" version="[9.0.0,10.10.2)" />
+      <dependency id="EPiServer.CMS.Core" version="[9.0.0,11.0.0)" />
+      <dependency id="EPiServer.CMS.UI" version="[9.0.0,11.0.0)" />
     </dependencies>
   </metadata>
   <files>
