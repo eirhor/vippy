@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -12,33 +13,33 @@ namespace Test.Controllers
     {
         public async Task<ActionResult> Index()
         {
-            var vippyWrapper = new VippyWrapper(apiKey: "{apiKey}", secretKey: "{secretKey}");
+            var vippyWrapper = new VippyWrapper(apiKey: "{apiKey}", secretKey: "{apiSecret}");
 
-           /* // Test
-            // Delete video
-            // post video
-            // put video
-            var newVideoRequest = new NewVideoRequest();
+            //// Test
+            //// Delete video
+            //// post video
+            //// put video
+            //var newVideoRequest = new NewVideoRequest();
 
-            using (FileStream file = System.IO.File.OpenRead(@"C:\Projects\Vippy\Test\test.mp4"))
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    file.CopyTo(memoryStream);
-                    newVideoRequest.Data = memoryStream.ToArray();
-                    newVideoRequest.ContentLength = memoryStream.Length;
-                }
-            }
+            //using (FileStream file = System.IO.File.OpenRead(@"C:\Projects\second.mp4"))
+            //{
+            //    using (var memoryStream = new MemoryStream())
+            //    {
+            //        file.CopyTo(memoryStream);
+            //        newVideoRequest.Data = memoryStream.ToArray();
+            //        newVideoRequest.ContentLength = memoryStream.Length;
+            //    }
+            //}
 
-            newVideoRequest.Title = "test.mp4 title";
-            newVideoRequest.VideoPath = "test.mp4";
-            newVideoRequest.ContentType = "video/mp4";
+            //newVideoRequest.Title = "second.mp4 title";
+            //newVideoRequest.VideoPath = "second.mp4";
+            //newVideoRequest.ContentType = "video/mp4";
 
-            var newVideoResponse = await vippyWrapper.PutVideo(newVideoRequest);*/
+            //var newVideoResponse = await vippyWrapper.PutVideo(newVideoRequest);
 
             IHtmlString embedCode = await vippyWrapper.GetEmbedCode(new GetEmbedCodeRequest()
             {
-                VideoId = "4584"
+                VideoId = "9176"
             });
 
             Logo logo = await vippyWrapper.GetLogo(logoId: "50");
@@ -47,14 +48,14 @@ namespace Test.Controllers
 
             IEnumerable<Player> players = await vippyWrapper.GetPlayers();
 
-            Video video = await vippyWrapper.GetVideo(videoId: "4634", withStatistics: true);
+            Video video = await vippyWrapper.GetVideo(videoId: "9176", withStatistics: true);
 
-            var videoThumbnails = await vippyWrapper.GetVideoThumbnails(new[] { "4803", "4634", "4584" });
+            var videoThumbnails = await vippyWrapper.GetVideoThumbnails(new[] { "9176", "9177" });
 
             IEnumerable<Video> videos = await vippyWrapper.GetVideos(true);
 
             // Login to vippy.co, tools -> Archives, at the bottom you have the archive number.
-            IEnumerable<Tag> tags = await vippyWrapper.GetTags("10010");
+            IEnumerable<Tag> tags = await vippyWrapper.GetTags("9176");
 
             //var presentation = await vippyWrapper.GetPresentation("presentationId");
 
